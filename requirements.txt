@@ -1,0 +1,9 @@
+pandas
+textblob
+colorama
+pyPDF2
+nltk
+numpy
+matplotlib
+
+# note the requirement may not be fully installed now.
