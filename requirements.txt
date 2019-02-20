@@ -1,9 +1,9 @@
-pandas
-textblob
-colorama
-pyPDF2
+matplotlib
 nltk
 numpy
-matplotlib
+pandas
+scikit-learn
+sklearn
+textblob
 
 # note the requirement may not be fully installed now.

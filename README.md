@@ -1,19 +1,24 @@
 # Bank-Statement-Analysis
 
 ## Steps
-Part1. Categorization
-### 1. Create categories.txt with categorization and hiererachy structure
+### Part1. Categorization
+1. Create categories.txt with categorization and hiererachy structure
+Example: /data/categories.txt
 
-Part2. Prepare statement data
-### 1. Parse PDF Statement transaction lines into raw data in csv file
-    csp_01-01-2019.pdf --> csp_01-01-2019_raw.csv
-### 2. Predict new statement against pretrained data -- if no pretrainied data, label all new transaction with categorization id (taken as correction process) -- if prediction correct, enter to skip, if wrong, enter id to correct.
-    Predicted data contains 2 parts -- 1) Expense/Income type, 2) Vendor name
-    csp_01-01-2019_raw.csv --> csp_01-01-2019_labeled.csv
-### 3. Add labeled data to pretrained data. Remove duplicate from this step. (TODO: definition of duplicate).
-    Display/Visualization of previous labeled data csp_01-01-2019.csv
-### 4. Analyze transactions for certain period of time. It could be the aggregation of multiple labeled csv files. Data visualization could be presented in form of jupyter notebook.
+### Part2. Prepare transaction activity data
+1. Download original transaction activity csv files from online banking.
+Original csv files should be saved in dir: /original_transactions/ with naming convention as <BANK>_<XXX>.csv, where
+<BANK> section is support 1) AMEX, 2) BOA, 3)CHASE, 4) CITI, and
+<XXX> could be anything such as account id to differentiate accounts.
+Example: /original_transactions/BOA_1234_201901.csv
 
+2. Use data_processor.py to get generate clean transaction data that can fit into the analytical models. Clean data will be generated in /clean_transactions/
+Example: /original_transactions/BOA_1234_201901.csv 's clean data is
+         /clean_transactions/BOA_1234_201901_clean.csv
+
+3. Setup pre-labeld pretrained data.
+
+4. TODO
 
 
 Development Note:
